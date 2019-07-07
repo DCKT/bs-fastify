@@ -105,7 +105,9 @@ module Response = {
 
 [@bs.send.pipe: t] external register: 'a => unit = "register";
 
-[@bs.send.pipe: t] external use: (string, 'a) => unit = "use";
+[@bs.send.pipe: t] external use1: 'a => unit = "use";
+
+[@bs.send.pipe: t] external use2: ('a, 'b) => unit = "use";
 
 [@bs.send.pipe: t]
 external get: (string, (Request.t, Response.t) => unit) => unit = "get";
