@@ -12,6 +12,8 @@ yarn add @dck/bs-node @dck/bs-fastify
 
 ## Usage
 
+### Basic
+
 ```ocaml
 open BsFastify;
 open BsNode;
@@ -47,4 +49,26 @@ app
     | Some(error) => Js.log(error)
   }
 );
+```
+
+### Middleware
+
+```reason
+open BsFastify;
+open BsNode;
+
+let app = createApp(appOptions(~logger=true, ()));
+
+app |> register([%raw "require('fastify-multipart')"]);
+```
+
+### Use
+
+```reason
+open BsFastify;
+open BsNode;
+
+let app = createApp(appOptions(~logger=true, ()));
+
+app |> use("/medias", serveStatic("/assets));
 ```
