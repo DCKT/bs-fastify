@@ -1,21 +1,19 @@
 {
-  "name": "bs-fastify",
+  "name": "@dck/bs-fastify",
   "version": "0.1.0",
   "sources": {
-    "dir" : "src",
-    "subdirs" : true
+    "dir": "src",
+    "subdirs": true
   },
   "package-specs": {
     "module": "commonjs",
     "in-source": true
   },
   "suffix": ".bs.js",
-  "bs-dependencies": [
-    "@dck/bs-node"
-  ],
+  "bs-dependencies": ["@dck/bs-node"],
   "warnings": {
-    "error" : "+101"
+    "error": "+101"
   },
-  "namespace": true,
+  "namespace": false,
   "refmt": 3
 }
