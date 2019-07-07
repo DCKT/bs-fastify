@@ -10,6 +10,13 @@ Bucklescript bindings for [fastify](https://www.fastify.io/)
 yarn add @dck/bs-node @dck/bs-fastify
 ```
 
+Add it to `bs-dependencies` in your `bsconfig.json` : 
+```json
+{
+  "bs-dependencies": ["@dck/bs-node", "@dck/bs-fastify"],
+}
+```
+
 ## Usage
 
 ### Basic
