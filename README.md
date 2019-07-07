@@ -14,7 +14,7 @@ yarn add @dck/bs-node @dck/bs-fastify
 
 ### Basic
 
-```ocaml
+```reason
 open BsFastify;
 open BsNode;
 
