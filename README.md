@@ -22,7 +22,7 @@ let app = createApp(appOptions(~logger=true, ()));
 
 app
 |> get(baseEndpoint, (_req, res) =>
-  res->Response.sendObject({"downloads": downloads^})
+  res->Response.sendObject({"test": "test"})
 );
 
 
