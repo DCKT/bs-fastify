@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@dck/bs-node@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@dck/bs-node/-/bs-node-0.1.0.tgz#33511bd212d1d10203d464074d905c21ed37dc4e"
-  integrity sha512-utodtYC5OrEexQnnm9JZsLeLm4zdLNEu6Tac11McovXL58G7GwfD0knbv+bz12nYca716AIcuFqdgClhaBREAw==
+"@dck/bs-node@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@dck/bs-node/-/bs-node-0.2.0.tgz#f6dc71b3b459eef68825904d5a5d85ee3d459c9b"
+  integrity sha512-3LWwuy0bdg8iJOFD8Xq2v32qQgIir8PInHUmpRsv6CTC9wH9qrshabv1HnctbQm0XaQcGtfuJ956dlKKP1gUaQ==
 
-bs-platform@^5.0.6:
+bs-platform@5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.0.6.tgz#88c13041fb020479800de3d82c680bf971091425"
   integrity sha512-6Boa2VEcWJp2WJr38L7bp3J929nYha7gDarjxb070jWzgfPJ/WbzjipmSfnu2eqqk1MfjEIpBipbPz6n1NISwA==
