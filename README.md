@@ -26,10 +26,9 @@ Add it to `bs-dependencies` in your `bsconfig.json` :
 open BsFastify;
 open BsNode;
 
-let app = createApp(appOptions(~logger=true, ()));
+let app = createApp(AppOptions.make(~logger=true, ()));
 
-app
-|> get(baseEndpoint, (_req, res) =>
+app->get(baseEndpoint, (_req, res) =>
   res->Response.sendObject({"test": "test"})
 );
 
@@ -37,8 +36,7 @@ app
 let schemaProperties = Js.Dict.empty();
 schemaProperties->Js.Dict.set("name", Schema.property(~type_="string"));
 
-app
-  |> postWithSchema(
+app->postWithSchema(
        baseEndpoint,
        Schema.createBodySchema(
          ~required=[|"name"|],
@@ -50,8 +48,7 @@ app
        }
   );
 
-app
-|> listen(3333, (err, address) =>
+app->listen(3333, (err, address) =>
   switch (Js.Nullable.toOption(err)) {
     | None => Js.log("Server listening on " ++ address)
     | Some(error) => Js.log(error)
@@ -65,18 +62,18 @@ app
 open BsFastify;
 open BsNode;
 
-let app = createApp(appOptions(~logger=true, ()));
+let app = createApp(AppOptions.make(~logger=true, ()));
 
-app |> register([%raw "require('fastify-multipart')"]);
+app->register([%raw "require('fastify-multipart')"]);
 ```
 
-### Use
+### Usage
 
 ```reason
 open BsFastify;
 open BsNode;
 
-let app = createApp(appOptions(~logger=true, ()));
+let app = createApp(AppOptions.make(~logger=false, ()));
 
-app |> use2("/medias", serveStatic("/assets));
+app->use2("/medias", serveStatic("/assets));
 ```

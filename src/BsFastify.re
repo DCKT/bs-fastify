@@ -93,11 +93,33 @@ module Response = {
   [@bs.send] external code: (t, int) => unit = "code";
 
   [@bs.send] external header: (t, string, string) => unit = "header";
+
+  [@bs.send] external getHeader: (t, string) => option(string) = "getHeader";
+
+  [@bs.send] external hasHeader: (t, string) => bool = "hasHeader";
 };
 
-type appOptions = {logger: bool};
+module AppOptions = {
+  type t;
 
-[@bs.module] external createApp: appOptions => t = "fastify";
+  [@bs.obj]
+  external make:
+    (
+      ~logger: bool=?,
+      ~ignoreTrailingSlash: bool=?,
+      ~https: bool=?,
+      ~http2: bool=?,
+      ~maxParamLength: int=?,
+      ~bodyLimit: int=?,
+      ~onProtoPoisoning: [@bs.string] [ | `error | `remove | `ignore]=?,
+      ~onConstructorPoisoning: [@bs.string] [ | `error | `remove | `ignore]=?,
+      unit
+    ) =>
+    t =
+    "";
+};
+
+[@bs.module] external createApp: AppOptions.t => t = "fastify";
 
 [@bs.send] external register: (t, 'a) => unit = "register";
 
@@ -129,5 +151,5 @@ external deleteWithSchema:
   "delete";
 
 [@bs.send]
-external listen: (t, int, (Js.Nullable.t(string), Js.Exn.t) => unit) => unit =
+external listen: (t, int, (Js.Nullable.t(Js.Exn.t), string) => unit) => unit =
   "listen";
