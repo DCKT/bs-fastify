@@ -2,7 +2,7 @@
 
 🚧
 
-Bucklescript bindings for [fastify](https://www.fastify.io/)
+Bucklescript bindings for [fastify](https://www.fastify.io/) (v`2.11.0`)
 
 ## Install
 
