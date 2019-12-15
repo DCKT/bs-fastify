@@ -47,12 +47,6 @@ module Schema = {
     );
 };
 
-[@bs.deriving abstract]
-type appOptions = {
-  [@bs.optional]
-  logger: bool,
-};
-
 module Request = {
   type t;
   type log;
@@ -101,36 +95,39 @@ module Response = {
   [@bs.send] external header: (t, string, string) => unit = "header";
 };
 
+type appOptions = {logger: bool};
+
 [@bs.module] external createApp: appOptions => t = "fastify";
 
-[@bs.send.pipe: t] external register: 'a => unit = "register";
+[@bs.send] external register: (t, 'a) => unit = "register";
 
-[@bs.send.pipe: t] external use1: 'a => unit = "use";
+[@bs.send] external use1: (t, 'a) => unit = "use";
 
-[@bs.send.pipe: t] external use2: ('a, 'b) => unit = "use";
+[@bs.send] external use2: (t, 'a, 'b) => unit = "use";
 
-[@bs.send.pipe: t]
-external get: (string, (Request.t, Response.t) => unit) => unit = "get";
+[@bs.send]
+external get: (t, string, (Request.t, Response.t) => unit) => unit = "get";
 
-[@bs.send.pipe: t]
-external post: (string, (Request.t, Response.t) => unit) => unit = "post";
+[@bs.send]
+external post: (t, string, (Request.t, Response.t) => unit) => unit = "post";
 
-[@bs.send.pipe: t]
-external put: (string, (Request.t, Response.t) => unit) => unit = "put";
+[@bs.send]
+external put: (t, string, (Request.t, Response.t) => unit) => unit = "put";
 
-[@bs.send.pipe: t]
-external delete: (string, (Request.t, Response.t) => unit) => unit = "delete";
-
-[@bs.send.pipe: t]
-external postWithSchema:
-  (string, Schema.t, (Request.t, Response.t) => unit) => unit =
-  "post";
-
-[@bs.send.pipe: t]
-external deleteWithSchema:
-  (string, Schema.t, (Request.t, Response.t) => unit) => unit =
+[@bs.send]
+external delete: (t, string, (Request.t, Response.t) => unit) => unit =
   "delete";
 
-[@bs.send.pipe: t]
-external listen: (int, (Js.Nullable.t(string), string) => unit) => unit =
+[@bs.send]
+external postWithSchema:
+  (t, string, Schema.t, (Request.t, Response.t) => unit) => unit =
+  "post";
+
+[@bs.send]
+external deleteWithSchema:
+  (t, string, Schema.t, (Request.t, Response.t) => unit) => unit =
+  "delete";
+
+[@bs.send]
+external listen: (t, int, (Js.Nullable.t(string), Js.Exn.t) => unit) => unit =
   "listen";
