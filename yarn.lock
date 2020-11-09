@@ -86,7 +86,7 @@ fast-safe-stringify@^2.0.7:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
   integrity sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
 
-fastify@^2.11.0:
+fastify@2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/fastify/-/fastify-2.11.0.tgz#de859ddea199c4850aa6396533027fbda6997599"
   integrity sha512-IoYht8U19KhOtvpFCgwpsu6BDywCk32bfzoGfzgdkEvEYkdcpiwTUIlxSVNaArYF4MPDzpA2q8V7nPHu23OQBQ==
@@ -114,9 +114,9 @@ fastq@^1.6.0:
     reusify "^1.0.0"
 
 find-my-way@^2.2.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/find-my-way/-/find-my-way-2.2.1.tgz#248e939243af1b9df368bcc9b8c8286306caae7d"
-  integrity sha512-pzZA9/PlhDGG5PRzmd4vH4AbKW7FO68RE7q2I3NzjJHcVPukYbDA7bPdArg7ySKfS6pKki+qhrawFoN6aNZfjA==
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/find-my-way/-/find-my-way-2.2.5.tgz#86ce825266fa28cd962e538a45ec2aaa84c3d514"
+  integrity sha512-GjRZZlGcGmTh9t+6Xrj5K0YprpoAFCAiCPgmAH9Kb09O4oX6hYuckDfnDipYj+Q7B1GtYWSzDI5HEecNYscLQg==
   dependencies:
     fast-decode-uri-component "^1.0.0"
     safe-regex2 "^2.0.0"
